@@ -23,7 +23,7 @@
  */
 
 #include "signalProcessing.h"
-#include "uncertain.h"
+#include "uxhw.h"
 #include "utils.h"
 #include "waveEstimation.h"
 #include <getopt.h>
@@ -88,7 +88,7 @@ applyUncertainty(Buffer * const buffer, const float uncertainty)
 		const float lowerBound = value - uncertainty / 2.0;
 		const float upperBound = value + uncertainty / 2.0;
 
-		buffer->heapPointer[i] = libUncertainFloatUniformDist(lowerBound, upperBound);
+		buffer->heapPointer[i] = UxHwFloatUniformDist(lowerBound, upperBound);
 	}
 }
 
